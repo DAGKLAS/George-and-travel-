@@ -386,5 +386,47 @@ h1{
       0.05em 0.05em black;
 }
 
+/* Right-hand side container styling */
+#results-container {
+  position: fixed;
+  top: 80px; /* Adjust based on the height of your navbar */
+  margin-bottom: 100px;
+  right: 10px;
+  width: 300px;
+  height: calc(100% - 160px); /* Adjust based on the height of your navbar */
+  overflow-y: auto; /* Make it scrollable if content overflows */
+  background: #fffff0 ; /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  z-index: 1000; /* Ensure it is in front of other content */
+  display: none; /* Hide initially */
+}
 
+
+#results-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.results {
+  border: 1px solid #ddd; /* Add border for better visualization */
+  padding: 1000px; /* Add padding for better spacing */
+  background: white; /* Ensure background is solid white */
+}
+
+.result-title, .result-image, .result-description {
+  width: 100%;
+  margin-bottom: 75px; /* Space between elements */
+  text-align: center;
+}
+
+.result-image img {
+  width: 100%; /* Make the image take full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 150px; /* Constrain the height */
+  object-fit: cover; /* Ensure the image covers the specified dimensions without distortion */
+}
 
