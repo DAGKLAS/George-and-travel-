@@ -87,3 +87,68 @@ If the search is for a specific country, the code looks through the data.countri
 If there is any problem during the fetch operation (like the server not responding or a network failure), this catch() block will handle the error.The error message is logged to the browser's console for debugging.
 */
 
+function getRandomItems(array, count) {
+  const shuffled = array.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+//Math.random() generates a random number between 0 and 1. If the result is positive, element a stays in its current position relative to element b.Since this process is repeated randomly, it creates a "shuffling" effect on the array.
+
+function displayItems(items) {
+  const resultsContainer = document.getElementById('results-container');
+  const resultsList = resultsContainer.querySelector('ul');
+  resultsList.innerHTML = ''; // Clear previous results
+  resultsContainer.style.display = 'block'; // Show the container
+
+  items.forEach(item => {
+    const titleItem = document.createElement('li');
+    titleItem.className = "result-title";
+    titleItem.innerHTML = `<h2>${item.name}</h2>`;
+
+    const imageItem = document.createElement('li');
+    imageItem.className = "result-image";
+    const img = document.createElement('img');
+    img.src = item.imageUrl;
+    img.alt = item.name;
+
+    img.onload = () => {
+      imageItem.appendChild(img);
+
+      const descriptionItem = document.createElement('li');
+      descriptionItem.className = "result-description";
+      descriptionItem.innerHTML = `<p>${item.description}</p>`;
+
+      resultsList.appendChild(titleItem);
+      resultsList.appendChild(imageItem);
+      resultsList.appendChild(descriptionItem);
+    };
+
+    img.onerror = () => {
+      const descriptionItem = document.createElement('li');
+      descriptionItem.className = "result-description";
+      descriptionItem.innerHTML = `<p>${item.description}</p>`;
+
+      resultsList.appendChild(titleItem);
+      resultsList.appendChild(descriptionItem);
+    };
+  });
+}
+
+/* The function takes an array of items (likely containing objects with name, imageUrl, and description properties). The .forEach() method is used to iterate over each item in this array.
+titleItem: A new list item (<li>) is created to hold the title of the current item.
+The class "result-title" is applied to the <li>, likely for styling purposes.
+The content of the <li> is set to an <h2> element containing the item.name, which is the name or title of the travel destination.
+An <img> element is created. The src attribute is set to the item.imageUrl, which is the URL of the image associated with this item, and the alt attribute is set to the item.name for accessibility (in case the image cannot be loaded).
+img.onload: This event fires when the image is successfully loaded.
+imageItem.appendChild(img): The loaded <img> element is appended to the imageItem <li>.
+img.onerror: This event handler is triggered if the image fails to load (e.g., broken image URL).
+The code will skip displaying the image and proceed to create and append only the titleItem and descriptionItem to the resultsList. This ensures that the user still sees the title and description, even if the image can't be loaded.
+*/
+
+btnSearch.addEventListener('click', search);
+btnReset.addEventListener('click', () => {
+  document.getElementById('searchInput').value = '';
+  const resultsContainer = document.getElementById('results-container');
+  resultsContainer.querySelector('ul').innerHTML = '';
+  resultsContainer.style.display = 'none'; // Hide the container
+});
