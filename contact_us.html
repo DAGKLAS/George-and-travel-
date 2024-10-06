@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class='navbar'>
+        <div class="brand">
+            <p>George's Travel Guide</p>
+        </div>
+        <div class="links">
+            <a href='travel_recommendation.html'>Home</a>
+            <a href='about_us.html'>About Us</a>
+            <a href='contact_us.html'>Contact Us</a>
+        </div>
+        <div class="searchbar">
+            <input type='text' id='searchInput' placeholder="Enter a destination or keyword">
+            <div class="buttons">
+                <button id='btnSearch'><span style="font-size:12px;">Search</button>
+                <button id='btnReset'><span style="font-size:12px;">Clear</button>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    <div class="contact_us">
+        <h1 style="font-size:50px;">CONTACT US</h1>
+        <h3 style="font-size:14px">Have questions or need travel advice? Reach out to us anytime. We're here to help you plan your next adventure!</h3>    
+    </div>
+    <div>
+        <form class="contact_form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name"><br><br><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" placeholder="Enter your Email"><br><br><br>
+            <label for="message">Message:</label><br>
+            <textarea placeholder="How can we help you?" id="message" name="message" rows="4" cols="50"></textarea>
+            <button class="btnSubmit">Submit</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p>Website created by George Dagklis Octomber, 2024. All rights forgone because learning should be free and available.</p>
+    </div>
+    <script src="travel_recommendation.js"></script>
+</body>
