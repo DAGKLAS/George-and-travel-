@@ -1,0 +1,102 @@
+body
+{
+    background-image: url('main-hub.jpg');
+    height: 550px;
+    background-color:#ff6f61;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+h1{
+    z-index:1;
+}
+
+/* Add a black background color to the top navigation */
+.navbar {
+    height: 60px;
+    width: 100.2%;
+    background-color:#ff6f61 ;
+    overflow: hidden;
+    display: flex;
+    position:fixed;
+    z-index: 1;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -20px;
+}
+
+.brand
+{
+    flex:1;
+    display:flex;
+    color: white;
+    margin-left : 20px ;
+}
+
+.brand p
+{
+    flex: 1;
+    display:flex;
+    align-items: center;
+    font-size: 17px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.links
+{
+    flex:1;
+    display: flex;
+    align-items:center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#searchInput 
+{
+    border:none;
+    text-align: left;
+    width: 70%;
+}
+
+::placeholder
+{
+    color: #097d72;
+}
+
+.searchbar
+{
+    border-radius: 20px;
+    padding:10px;
+    background: white;
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    margin-top:12px;
+    margin-bottom: 12px;
+    width: 25%;
+    
+}
+
+.buttons
+{
+    flex:1;
+    display: flex;
+    justify-content: right;
+}
+
+.navbar button {
+  height: 22px;
+  width: 75px;
+  background-color: #097d72;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
